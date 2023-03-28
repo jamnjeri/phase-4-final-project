@@ -1,5 +1,7 @@
 class Recipe < ApplicationRecord
     belogs_to :users
+    has_many :tags
+    has_many :reviews
 
     validates :title, {
         length: { minimum: 5, maximum: 20 },
