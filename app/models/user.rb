@@ -11,7 +11,7 @@ class User < ApplicationRecord
         presence: true
     }
 
-    validates :username, {
+    validates :user_name, {
         length: { minimum: 5, maximum: 20 },
         uniqueness: true,
         presence: true
@@ -20,7 +20,7 @@ class User < ApplicationRecord
     validates :email, {
         uniqueness: true,
         presence: true,
-        format: { with: URI::MailTo::Email_REGEXP } # for valid email format
+        # format: { with: URI::MailTo::Email_REGEXP } # for valid email format
     }
 
     validates :password, {

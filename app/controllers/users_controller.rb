@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     # GET /Users
     def index
-        users = Users.all
+        users = User.all
         render json: users, status: :ok
     end
     
@@ -21,11 +21,11 @@ class UsersController < ApplicationController
     end
 
     # POST /users - for registration & login
-    def created
+    def create
         user = User.create(user_params)
         # Save user in session's hash
         session[:user_id] = user.id
-        render json: usr, status: :created
+        render json: user, status: :created
     end
 
     # PATCH/PUT /users/:id - for updating user info
