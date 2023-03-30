@@ -658,3 +658,40 @@ Filter chain halted as :authorize rendered or redirected
 Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 4677)
 
 
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:18:52 +0300
+  
+NameError (uninitialized constant URI::MailTo::Email_REGEXP
+Did you mean?  URI::MailTo::EMAIL_REGEXP):
+  
+app/models/user.rb:23:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:19:49 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail.com", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb52c325f58>, params: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail.com", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "faith4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "faithgmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 263ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 5786)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:20:09 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb530f69950>, params: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "faith4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "faithgmail"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 254ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2952)
+
+
