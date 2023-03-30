@@ -695,3 +695,62 @@ Processing by UsersController#create as */*
 Completed 201 Created in 254ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2952)
 
 
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:21:56 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatimagmail", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatimagmail", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb52004c770>, params: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatimagmail", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatimagmail", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "fatima4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatimagmail"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 266ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 2939)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:22:07 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb51c0ba8c8>, params: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "fatima4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "user_name", "email", "password_digest", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fatima"], ["user_name", "fatima4life"], ["email", "fatima@gmail.com"], ["password_digest", "[FILTERED]"], ["gender", "Female"], ["created_at", "2023-03-30 10:22:07.316533"], ["updated_at", "2023-03-30 10:22:07.316533"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 257ms (Views: 0.4ms | ActiveRecord: 7.8ms | Allocations: 3706)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-30 13:22:20 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1307)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20230328181149)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "recipes"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20230328181149"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20230330102914)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "ingredients" varchar, "image_url" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230330102914"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
