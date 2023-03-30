@@ -634,3 +634,27 @@ Filter chain halted as :authorize rendered or redirected
 Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1130)
 
 
+Started GET "/recipes" for 127.0.0.1 at 2023-03-30 13:07:11 +0300
+  
+NoMethodError (undefined method `belogs_to' for Recipe:Class
+Did you mean?  belongs_to):
+  
+app/models/recipe.rb:2:in `<class:Recipe>'
+app/models/recipe.rb:1:in `<top (required)>'
+Started GET "/recipes" for 127.0.0.1 at 2023-03-30 13:08:21 +0300
+Processing by RecipesController#index as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "recipe"=>{}}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 956)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-30 13:11:58 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"Machakura", "description"=>"Potatoes, thufu and 2 nyamas, boiled for 1hour", "ingredients"=>"potatoe, water, salt, beaf chunks", "img_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "recipe"=>{"title"=>"Machakura", "description"=>"Potatoes, thufu and 2 nyamas, boiled for 1hour", "ingredients"=>"potatoe, water, salt, beaf chunks", "img_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 4677)
+
+
