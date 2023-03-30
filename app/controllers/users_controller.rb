@@ -23,34 +23,23 @@ class UsersController < ApplicationController
     # POST /users - for registration & login
     def created
         user = User.create(user_params)
-        if user.valid?
-            # Save user in session's hash
-            session[:user_id] = user.id  #save_user(user.id)
-            render json: usr, status: :created  #app_response(message: 'Registration was successful', status: :created, data: user)
-        else
-            render json: { errors: user.errors.full_messages }, status: :unprocessable_entity # app_response(message: 'Something went wrong during registration', status: :unprocessable_entity, data: user.errors)
-        end
+        # Save user in session's hash
+        session[:user_id] = user.id
+        render json: usr, status: :created
     end
 
     # PATCH/PUT /users/:id - for updating user info
     def update 
         user = find_user
-        if user
-            user.update(user_params)
-            render json: user, status: :accepted
-        else
-            render json: { error: "USer not found"}, status: :not_found
-        end
+        user.update(user_params)
+        render json: user, status: :accepted
     end
 
     # Delete /users/:id - to delete a user
     def destroy
         user = find_user
-        if user.destroy
-           head :no_content
-        else
-            render json: { error: "User not found"}, status: :not_found
-        end
+        user.destroy
+        head :no_content   
     end
 
     # Delete /logout - to log out the user

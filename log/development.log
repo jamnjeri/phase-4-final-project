@@ -49,3 +49,55 @@ Migrating to CreateRecipes (20230328181149)
   [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1" for 127.0.0.1 at 2023-03-30 09:09:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-03-30 09:09:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for 127.0.0.1 at 2023-03-30 09:10:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-03-30 09:17:16 +0300
+  
+SyntaxError (/home/zamil/Moringa/Devs/phase-4-final-project/app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+        uniqueness: true
+        ^~~~~~~~~~
+/home/zamil/Moringa/Devs/phase-4-final-project/app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+        presence: true
+                ^
+):
+  
+app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+Started GET "/Users" for 127.0.0.1 at 2023-03-30 09:18:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/Users"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-03-30 09:18:53 +0300
+  
+SyntaxError (/home/zamil/Moringa/Devs/phase-4-final-project/app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+        uniqueness: true
+        ^~~~~~~~~~
+/home/zamil/Moringa/Devs/phase-4-final-project/app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+        presence: true
+                ^
+):
+  
+app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 09:20:32 +0300
+  
+NameError (uninitialized constant URI::MailTo::Email_REGEXP
+Did you mean?  URI::MailTo::EMAIL_REGEXP):
+  
+app/models/user.rb:23:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
