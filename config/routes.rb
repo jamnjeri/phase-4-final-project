@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
   # user
   get '/user/login/check', to: 'users#check_login_status'
   post '/users', to: 'users#register'

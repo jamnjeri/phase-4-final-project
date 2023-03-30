@@ -1,42 +1,80 @@
 class UsersController < ApplicationController
 
-    before_action :session_expired?, only: [check_login_status]
+    before_action :authorize, only: [:show, :update, :destroy]
 
-    def register
+    # Handle ActiveRecord Not Found exception
+    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+
+    # Handle ActiveRecord Unprocessable Entity - raised when a record fails to save or validate in the database.
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+
+    # GET /Users
+    def index
+        users = Users.all
+        render json: users, status: :ok
+    end
+    
+    # GET /Users/:id
+    def show
+        user = User.find(session[:user_id])
+        render json: user, status: :ok
+    end
+
+    # POST /users - for registration & login
+    def created
         user = User.create(user_params)
         if user.valid?
-            save_user(user.id)
-            app_response(message: 'Registration was successful', status: :created, data: user)
+            # Save user in session's hash
+            session[:user_id] = user.id  #save_user(user.id)
+            render json: usr, status: :created  #app_response(message: 'Registration was successful', status: :created, data: user)
         else
-            app_response(message: 'Something went wrong during registration', status: :unprocessable_entity, data: user.errors)
+            render json: { errors: user.errors.full_messages }, status: :unprocessable_entity # app_response(message: 'Something went wrong during registration', status: :unprocessable_entity, data: user.errors)
         end
     end
 
-    def login
-        sql = "username = :username OR email = :email"
-        user = User.where(sql, { username: user_params[:username], email: user_params[:email] }).first
-        if user&.authenticate(user_params[:password])
-            save_user(user.id)
-            token = encode(user.id, user.email)
-            app_response(message: 'Login was successful', status: :ok, data: {user: user, token: token})
+    # PATCH/PUT /users/:id - for updating user info
+    def update 
+        user = find_user
+        if user
+            user.update(user_params)
+            render json: user, status: :accepted
         else
-            app_response(message: 'Invalid username/email or password', status: :unauthorized)
+            render json: { error: "USer not found"}, status: :not_found
         end
     end
 
-    def logout
-        remove_user
-        app_response(message: 'Logout successful')
+    # Delete /users/:id - to delete a user
+    def destroy
+        user = find_user
+        if user.destroy
+           head :no_content
+        else
+            render json: { error: "User not found"}, status: :not_found
+        end
     end
 
-    def check_login_status
-        app_response(message: 'success', status: :ok)
-    end
-
+    # Delete /logout - to log out the user
+    # def logout
+    #     session.delete(:user_id)
+    #     render json: { "Logged Out" }
+    # end
+        
     private 
     
+    def find_user
+        User.find(params[:id])
+    end
+
     def user_params
         params.permit(:username, :email, :password)
+    end
+
+    def render_not_found_response
+        render json: { error: "User not found" }, status: :not_found
+    end
+
+    def render_unprocessable_entity_response(exception)
+        render json: { error: exception.message }, status: :unprocessable_entity
     end
 
 end
