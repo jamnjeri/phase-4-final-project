@@ -754,3 +754,218 @@ Migrating to CreateRecipes (20230330102914)
   [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:43:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SessionsController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:47:52 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 1.1ms | Allocations: 8910)
+
+
+  
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x00000000020580>):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:48:15 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 0.9ms | Allocations: 8781)
+
+
+  
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x00000000022498>):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:48:53 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 1.0ms | Allocations: 8671)
+
+
+  
+NoMethodError (undefined method `rrender' for #<SessionsController:0x00000000024388>
+Did you mean?  render):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:49:00 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 264ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 7111)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-30 13:50:08 +0300
+Processing by SessionsController#destroy as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (Allocations: 1994)
+
+
+  
+NoMethodError (undefined method `rende' for #<SessionsController:0x000000000280c8>
+Did you mean?  render
+               end):
+  
+app/controllers/sessions_controller.rb:16:in `destroy'
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-30 13:50:19 +0300
+Processing by SessionsController#destroy as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 321)
+
+
+Started DELETE "/login" for 127.0.0.1 at 2023-03-30 13:50:46 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/login"):
+  
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:50:58 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima1@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima1@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms | Allocations: 6623)
+
+
+  
+NameError (undefined local variable or method `flash' for #<SessionsController:0x0000000002a058>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:51:28 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 251ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 2652)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-30 13:51:45 +0300
+Processing by SessionsController#destroy as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 163)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-30 13:51:56 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"fatima@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1540)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:52:41 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"zam94@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam94@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 0.1ms | Allocations: 2307)
+
+
+  
+NameError (undefined local variable or method `flash' for #<SessionsController:0x0000000002a288>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 13:53:26 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1200)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:53:59 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"faith@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"faith@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "faith@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 251ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 647)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-30 13:54:11 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"email"=>"faith@gmail.com", "password"=>"[FILTERED]", "recipe"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 989)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-30 13:54:17 +0300
+Processing by RecipesController#index as */*
+  Parameters: {"email"=>"faith@gmail.com", "password"=>"[FILTERED]", "recipe"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 788)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-30 13:57:12 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"Machakura", "description"=>"viazi na dhufu, kikuyu delight", "ingredients"=>"potatoes, 20ltrs of water, pinch of salt and four pieces of meat", "image_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "recipe"=>{"title"=>"Machakura", "description"=>"viazi na dhufu, kikuyu delight", "ingredients"=>"potatoes, 20ltrs of water, pinch of salt and four pieces of meat", "image_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 703)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-30 13:57:47 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"Machakura", "description"=>"viazi na dhufu, kikuyu delight", "ingredients"=>"potatoes, 20ltrs of water, pinch of salt and four pieces of meat", "image_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "user_id"=>"3", "recipe"=>{"title"=>"Machakura", "description"=>"viazi na dhufu, kikuyu delight", "ingredients"=>"potatoes, 20ltrs of water, pinch of salt and four pieces of meat", "image_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "user_id"=>"3"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 703)
+
+
