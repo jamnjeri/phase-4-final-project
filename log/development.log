@@ -1,0 +1,971 @@
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20230328125430)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "description" varchar NOT NULL, "ingredients" varchar NOT NULL, "image_url" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328125430"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-28 12:56:27.681522"], ["updated_at", "2023-03-28 12:56:27.681522"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20230328125950)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "description" varchar NOT NULL, "ingredients" varchar NOT NULL, "image_url" varchar NOT NULL, "belongs_to" varchar, "user" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328125950"]]
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-28 13:00:25.040692"], ["updated_at", "2023-03-28 13:00:25.040692"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230328173515)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "user_name" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "gender" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328173515"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-28 17:36:13.183881"], ["updated_at", "2023-03-28 17:36:13.183881"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20230328181149)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar NOT NULL, "description" varchar NOT NULL, "ingredients" varchar NOT NULL, "img_url" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328181149"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1" for 127.0.0.1 at 2023-03-30 09:09:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-03-30 09:09:55 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/user" for 127.0.0.1 at 2023-03-30 09:10:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-03-30 09:17:16 +0300
+  
+SyntaxError (/home/zamil/Moringa/Devs/phase-4-final-project/app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+        uniqueness: true
+        ^~~~~~~~~~
+/home/zamil/Moringa/Devs/phase-4-final-project/app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+        presence: true
+                ^
+):
+  
+app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+Started GET "/Users" for 127.0.0.1 at 2023-03-30 09:18:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/Users"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-03-30 09:18:53 +0300
+  
+SyntaxError (/home/zamil/Moringa/Devs/phase-4-final-project/app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+        uniqueness: true
+        ^~~~~~~~~~
+/home/zamil/Moringa/Devs/phase-4-final-project/app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+        presence: true
+                ^
+):
+  
+app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:16: syntax error, unexpected local variable or method, expecting '}'
+app/models/user.rb:17: syntax error, unexpected ':', expecting `end'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 09:20:32 +0300
+  
+NameError (uninitialized constant URI::MailTo::Email_REGEXP
+Did you mean?  URI::MailTo::EMAIL_REGEXP):
+  
+app/models/user.rb:23:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 11:52:52 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NameError (uninitialized constant URI::MailTo::Email_REGEXP
+Did you mean?  URI::MailTo::EMAIL_REGEXP):
+  
+app/models/user.rb:23:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 11:54:03 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"zazu", "species"=>"parrot", "user"=>{"name"=>"zazu"}}
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.8ms | Allocations: 22600)
+
+
+  
+NameError (uninitialized constant UsersController::Users):
+  
+app/controllers/users_controller.rb:13:in `index'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 11:55:05 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"zazu", "species"=>"parrot", "user"=>{"name"=>"zazu"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1068)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-30 11:55:50 +0300
+  
+NameError (uninitialized constant URI::MailTo::Email_REGEXP
+Did you mean?  URI::MailTo::EMAIL_REGEXP):
+  
+app/models/user.rb:23:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 11:56:03 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"zazu", "species"=>"parrot", "user"=>{"name"=>"zazu"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 961)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-30 11:58:04 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for UsersController
+Did you mean?  created):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2023-03-30 11:59:55 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :password_digest, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd6805e1448>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male"}} }[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.4ms | Allocations: 20871)
+
+
+  
+NoMethodError (undefined method `username' for #<User id: nil, name: nil, user_name: nil, email: "zam@gmail.com", password_digest: nil, gender: nil, created_at: nil, updated_at: nil>
+Did you mean?  user_name
+               user_name?
+               user_name=):
+  
+app/controllers/users_controller.rb:25:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-30 12:00:32 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com"}}
+[31mUnpermitted parameters: :name, :user_name, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd67800fe50>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3723)
+
+
+  
+NoMethodError (undefined method `username' for #<User id: nil, name: nil, user_name: nil, email: "zam@gmail.com", password_digest: nil, gender: nil, created_at: nil, updated_at: nil>
+Did you mean?  user_name
+               user_name?
+               user_name=):
+  
+app/controllers/users_controller.rb:25:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-30 12:01:25 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com"}}
+[31mUnpermitted parameters: :name, :user_name, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd68c1a80a0>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.7ms | Allocations: 7243)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users_controller.rb:27:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-30 12:02:42 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "username"=>"parrot", "email"=>"zam@gmail.com", "user"=>{"name"=>"zazu", "email"=>"zam@gmail.com"}}
+[31mUnpermitted parameters: :name, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd6841265a8>, params: {"name"=>"zazu", "username"=>"parrot", "email"=>"zam@gmail.com", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "email"=>"zam@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.3ms | Allocations: 2366)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'username' for User.):
+  
+app/controllers/users_controller.rb:25:in `create'
+Started POST "/users" for 127.0.0.1 at 2023-03-30 12:03:20 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "email"=>"zam@gmail.com", "user"=>{"name"=>"zazu", "email"=>"zam@gmail.com"}}
+[31mUnpermitted parameters: :name, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd6740ce818>, params: {"name"=>"zazu", "email"=>"zam@gmail.com", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "email"=>"zam@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3961)
+
+
+  
+NoMethodError (undefined method `username' for #<User id: nil, name: nil, user_name: nil, email: "zam@gmail.com", password_digest: nil, gender: nil, created_at: nil, updated_at: nil>
+Did you mean?  user_name
+               user_name?
+               user_name=):
+  
+app/controllers/users_controller.rb:25:in `create'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 12:04:38 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"zazu", "email"=>"zam@gmail.com", "user"=>{"name"=>"zazu", "email"=>"zam@gmail.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 841)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-03-30 12:04:48 +0300
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"zazu", "email"=>"zam@gmail.com", "id"=>"1", "user"=>{"name"=>"zazu", "email"=>"zam@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 827)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:05:43 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :password_digest, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd674455b30>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male"}} }[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3700)
+
+
+  
+NoMethodError (undefined method `username' for #<User id: nil, name: nil, user_name: nil, email: "zam@gmail.com", password_digest: nil, gender: nil, created_at: nil, updated_at: nil>
+Did you mean?  user_name
+               user_name?
+               user_name=):
+  
+app/controllers/users_controller.rb:25:in `create'
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:05:56 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "username"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :password_digest, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd68c239a78>, params: {"name"=>"zazu", "username"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male"}} }[0m
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 294)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'username' for User.):
+  
+app/controllers/users_controller.rb:25:in `create'
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:06:24 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :password_digest, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd68432ee40>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password_digest"=>"[FILTERED]", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.6ms | Allocations: 5474)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users_controller.rb:27:in `create'
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:08:11 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd690b06148>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.3ms | Allocations: 2853)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users_controller.rb:27:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-30 12:09:30 +0300
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 801)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:11:02 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd68062d140>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 0.4ms | Allocations: 2812)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users_controller.rb:27:in `create'
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:13:38 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fd6808469b8>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 0.4ms | Allocations: 2802)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users_controller.rb:27:in `create'
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:14:02 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb530ae8ed0>, params: {"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"zazu", "user_name"=>"parrot", "email"=>"zam@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 295ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 42658)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:18:06 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Zamil", "user_name"=>"zaiky09", "email"=>"zam09@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"Zamil", "user_name"=>"zaiky09", "email"=>"zam09@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb530acba88>, params: {"name"=>"Zamil", "user_name"=>"zaiky09", "email"=>"zam09@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Zamil", "user_name"=>"zaiky09", "email"=>"zam09@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam09@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 266ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 3004)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:28:06 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Zamiloski", "user_name"=>"zaiky094", "email"=>"zam094@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"Zamiloski", "user_name"=>"zaiky094", "email"=>"zam094@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameters: :name, :user_name, :gender, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb53d19f808>, params: {"name"=>"Zamiloski", "user_name"=>"zaiky094", "email"=>"zam094@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Zamiloski", "user_name"=>"zaiky094", "email"=>"zam094@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam094@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 259ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 5613)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:32:01 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameters: :user_name, :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb5303e1600>, params: {"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam94@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 263ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 5742)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:32:18 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb5307d2ca0>, params: {"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "zaiky94"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam94@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "user_name", "email", "password_digest", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zamoski"], ["user_name", "zaiky94"], ["email", "zam94@gmail.com"], ["password_digest", "[FILTERED]"], ["gender", "Male"], ["created_at", "2023-03-30 09:32:18.354028"], ["updated_at", "2023-03-30 09:32:18.354028"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 263ms (Views: 0.5ms | ActiveRecord: 3.9ms | Allocations: 6832)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:33:50 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb530c80928>, params: {"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "zaiky94"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam94@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 291ms (Views: 0.3ms | ActiveRecord: 4.7ms | Allocations: 5819)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:34:07 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000564af6691cb0>, params: {"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Zamoski", "user_name"=>"zaiky94", "email"=>"zam94@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "zaiky94"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam94@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 259ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 5755)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:34:45 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Zamo", "user_name"=>"zaik945", "email"=>"zam945@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "user"=>{"name"=>"Zamo", "user_name"=>"zaik945", "email"=>"zam945@gmail.com", "gender"=>"Male"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb53ce66a88>, params: {"name"=>"Zamo", "user_name"=>"zaik945", "email"=>"zam945@gmail.com", "password"=>"[FILTERED]", "gender"=>"Male", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Zamo", "user_name"=>"zaik945", "email"=>"zam945@gmail.com", "gender"=>"Male"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "zaik945"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam945@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "user_name", "email", "password_digest", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Zamo"], ["user_name", "zaik945"], ["email", "zam945@gmail.com"], ["password_digest", "[FILTERED]"], ["gender", "Male"], ["created_at", "2023-03-30 09:34:45.692507"], ["updated_at", "2023-03-30 09:34:45.692507"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 277ms (Views: 0.6ms | ActiveRecord: 7.7ms | Allocations: 6495)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-30 12:37:11 +0300
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SessionsController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/signup" for 127.0.0.1 at 2023-03-30 12:40:38 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb524197d10>, params: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "faith4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "faith@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "user_name", "email", "password_digest", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Faith"], ["user_name", "faith4life"], ["email", "faith@gmail.com"], ["password_digest", "[FILTERED]"], ["gender", "Female"], ["created_at", "2023-03-30 09:40:38.814595"], ["updated_at", "2023-03-30 09:40:38.814595"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 282ms (Views: 0.4ms | ActiveRecord: 3.8ms | Allocations: 6497)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-30 12:40:59 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1380)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-03-30 12:41:10 +0300
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "id"=>"2", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 881)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-03-30 12:41:16 +0300
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "id"=>"1", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 703)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-03-30 12:41:19 +0300
+Processing by UsersController#show as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "id"=>"3", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 703)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-30 12:41:26 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms | Allocations: 1054)
+
+
+Started DELETE "/users/1" for 127.0.0.1 at 2023-03-30 12:51:46 +0300
+Processing by UsersController#destroy as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "id"=>"1", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1130)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-30 13:07:11 +0300
+  
+NoMethodError (undefined method `belogs_to' for Recipe:Class
+Did you mean?  belongs_to):
+  
+app/models/recipe.rb:2:in `<class:Recipe>'
+app/models/recipe.rb:1:in `<top (required)>'
+Started GET "/recipes" for 127.0.0.1 at 2023-03-30 13:08:21 +0300
+Processing by RecipesController#index as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "recipe"=>{}}
+  [1m[36mRecipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:13:in `index'
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 956)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-30 13:11:58 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"Machakura", "description"=>"Potatoes, thufu and 2 nyamas, boiled for 1hour", "ingredients"=>"potatoe, water, salt, beaf chunks", "img_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "recipe"=>{"title"=>"Machakura", "description"=>"Potatoes, thufu and 2 nyamas, boiled for 1hour", "ingredients"=>"potatoe, water, salt, beaf chunks", "img_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 4677)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:18:52 +0300
+  
+NameError (uninitialized constant URI::MailTo::Email_REGEXP
+Did you mean?  URI::MailTo::EMAIL_REGEXP):
+  
+app/models/user.rb:23:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:19:49 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail.com", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb52c325f58>, params: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail.com", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "faith4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "faithgmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 263ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 5786)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:20:09 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb530f69950>, params: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faithgmail", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "faith4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "faithgmail"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 254ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2952)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:21:56 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatimagmail", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatimagmail", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb52004c770>, params: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatimagmail", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatimagmail", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "fatima4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatimagmail"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 266ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 2939)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-30 13:22:07 +0300
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "gender"=>"Female"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007fb51c0ba8c8>, params: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "controller"=>"users", "action"=>"create", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "gender"=>"Female"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."user_name" = ? LIMIT ?[0m  [["user_name", "fatima4life"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "user_name", "email", "password_digest", "gender", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fatima"], ["user_name", "fatima4life"], ["email", "fatima@gmail.com"], ["password_digest", "[FILTERED]"], ["gender", "Female"], ["created_at", "2023-03-30 10:22:07.316533"], ["updated_at", "2023-03-30 10:22:07.316533"]]
+  ↳ app/controllers/users_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:25:in `create'
+Completed 201 Created in 257ms (Views: 0.4ms | ActiveRecord: 7.8ms | Allocations: 3706)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-30 13:22:20 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Fatima", "user_name"=>"fatima4life", "email"=>"fatima@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 1307)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20230328181149)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "recipes"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20230328181149"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateRecipes (20230330102914)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "recipes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "ingredients" varchar, "image_url" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_recipes_on_user_id" ON "recipes" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230330102914"]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:43:46 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for SessionsController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:47:52 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 1.1ms | Allocations: 8910)
+
+
+  
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x00000000020580>):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:48:15 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 0.9ms | Allocations: 8781)
+
+
+  
+NameError (undefined local variable or method `root_url' for #<SessionsController:0x00000000022498>):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:48:53 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 1.0ms | Allocations: 8671)
+
+
+  
+NoMethodError (undefined method `rrender' for #<SessionsController:0x00000000024388>
+Did you mean?  render):
+  
+app/controllers/sessions_controller.rb:7:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:49:00 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 264ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 7111)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-30 13:50:08 +0300
+Processing by SessionsController#destroy as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 3ms (Allocations: 1994)
+
+
+  
+NoMethodError (undefined method `rende' for #<SessionsController:0x000000000280c8>
+Did you mean?  render
+               end):
+  
+app/controllers/sessions_controller.rb:16:in `destroy'
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-30 13:50:19 +0300
+Processing by SessionsController#destroy as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 321)
+
+
+Started DELETE "/login" for 127.0.0.1 at 2023-03-30 13:50:46 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/login"):
+  
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:50:58 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima1@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima1@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms | Allocations: 6623)
+
+
+  
+NameError (undefined local variable or method `flash' for #<SessionsController:0x0000000002a058>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:51:28 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fatima@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 251ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 2652)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-30 13:51:45 +0300
+Processing by SessionsController#destroy as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"fatima@gmail.com", "password"=>"[FILTERED]"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 163)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-30 13:51:56 +0300
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"fatima@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"fatima@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1540)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:52:41 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"zam94@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"zam94@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "zam94@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 251ms (ActiveRecord: 0.1ms | Allocations: 2307)
+
+
+  
+NameError (undefined local variable or method `flash' for #<SessionsController:0x0000000002a288>):
+  
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/users" for 127.0.0.1 at 2023-03-30 13:53:26 +0300
+Processing by UsersController#index as */*
+  Parameters: {"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "password"=>"[FILTERED]", "gender"=>"Female", "user"=>{"name"=>"Faith", "user_name"=>"faith4life", "email"=>"faith@gmail.com", "gender"=>"Female"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:14:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1200)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-30 13:53:59 +0300
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"faith@gmail.com", "password"=>"[FILTERED]", "session"=>{"email"=>"faith@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "faith@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+Completed 200 OK in 251ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 647)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-30 13:54:11 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"email"=>"faith@gmail.com", "password"=>"[FILTERED]", "recipe"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 989)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2023-03-30 13:54:17 +0300
+Processing by RecipesController#index as */*
+  Parameters: {"email"=>"faith@gmail.com", "password"=>"[FILTERED]", "recipe"=>{}}
+  [1m[36mRecipe Load (0.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/controllers/recipes_controller.rb:13:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 788)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-30 13:57:12 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"Machakura", "description"=>"viazi na dhufu, kikuyu delight", "ingredients"=>"potatoes, 20ltrs of water, pinch of salt and four pieces of meat", "image_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "recipe"=>{"title"=>"Machakura", "description"=>"viazi na dhufu, kikuyu delight", "ingredients"=>"potatoes, 20ltrs of water, pinch of salt and four pieces of meat", "image_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 703)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2023-03-30 13:57:47 +0300
+Processing by RecipesController#create as */*
+  Parameters: {"title"=>"Machakura", "description"=>"viazi na dhufu, kikuyu delight", "ingredients"=>"potatoes, 20ltrs of water, pinch of salt and four pieces of meat", "image_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "user_id"=>"3", "recipe"=>{"title"=>"Machakura", "description"=>"viazi na dhufu, kikuyu delight", "ingredients"=>"potatoes, 20ltrs of water, pinch of salt and four pieces of meat", "image_url"=>"https://plus.unsplash.com/premium_photo-1661313614926-e96981a05269?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHN0ZXd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", "user_id"=>"3"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 703)
+
+
