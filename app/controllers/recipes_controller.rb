@@ -1,7 +1,5 @@
 class RecipesController < ApplicationController
-    before_action :authorize, only: [:create, :update, :destroy]
-
-
+    
     # Handle ActiveRecord Not Found exception
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
  
@@ -26,7 +24,7 @@ class RecipesController < ApplicationController
  
     # POST /recipes
     def create
-        user = User.find(session[:user_id])
+        user = User.find_by(session[:user_id])
         if user
             recipe = user.recipes.create!(recipe_params)
             render json: recipe, status: :created

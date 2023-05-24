@@ -20,4 +20,8 @@ Rails.application.routes.draw do
 
   # TAGS
   resources :tags, only: [:index, :show, :create]
+
+  # POST /recipe-tag
+  post "/recipe-tag", to: "tags#recipe_tag"
+
 end

@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-    before_action :authorize, only: [:create]
+    # before_action :authorize, only: [:create]
 
 
     # Handle ActiveRecord Not Found exception
@@ -24,13 +24,19 @@ class TagsController < ApplicationController
  
     # POST /tags
     def create
-        tag = Tag.create(tag_params)
+        tag = Tag.new(tag_params)
    
-        if tag.valid?
+        if tag.save
             render json: tag, status: :accepted
         else
             render json: { errors: review.errors.full_messages }, status: :unprocessable_entity
         end
+    end
+
+    # POST /recipe_tag
+    def recipe_tag
+        recipeTag = RecipeTag.create(recipe_tag_params)
+        render json: recipeTag, status: :created
     end
  
  
@@ -44,6 +50,10 @@ class TagsController < ApplicationController
  
     def tag_params
         params.permit(:name)
+    end
+
+    def recipe_tag_params
+        params.permit(:recipe_id, :tag_id)
     end
  
  

@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-    before_action :authorize, only: [:show, :update, :destroy]
-
 
     # Handle ActiveRecord Not Found exception
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
@@ -15,14 +13,20 @@ class UsersController < ApplicationController
         render json: users, status: :ok
     end
    
-    # GET /users/:id
+    # GET /me
     def show
-        user = User.find(session[:user_id])
-        render json: user, status: :ok
+        # pp "Received request to /me with headers: #{request.headers.inspect}"
+        # pp session
+        user = User.find_by(session[:user_id])
+        if user
+            render json: user, status: :ok
+        else 
+            render json: { error: 'No user is currently logged in'}, status: :unauthorized
+        end
     end
  
  
-    # POST /users - for registration & login
+    # POST /signup - for registration & login
     def create
         user = User.create(user_params)
         # Save user in session's hash
