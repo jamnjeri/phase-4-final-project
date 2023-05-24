@@ -1,6 +1,4 @@
 class ReviewsController < ApplicationController
-    before_action :authorize, only: [:create, :update, :destroy]
-
 
     # Handle ActiveRecord Not Found exception
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
@@ -25,7 +23,8 @@ class ReviewsController < ApplicationController
     # POST /reviews
     def create
         recipe = Recipe.find(params[:recipe_id])
-        review = recipe.reviews.new(review_params.merge(user_id: session[:user_id]))
+        # review = recipe.reviews.new(review_params.merge(user_id: session[:user_id]))
+        review = Review.new(review_params)
    
         if review.save
           render json: review, status: :created
